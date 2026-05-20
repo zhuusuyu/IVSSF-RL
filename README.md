@@ -1,1 +1,13 @@
 # IVSSF-RL
+
+roslaunch turtlebot3_dynamic_pedestrians social_teacher_cross_dual_lane.launch
+roslaunch turtlebot3_dynamic_pedestrians social_teacher_wall_8ped_opposite.launch
+roslaunch turtlebot3_dynamic_pedestrians social_train_hybrid_8ped.launch
+
+分别对应文中三个环境。
+
+IVSSF_RL文件夹中 是本文算法的源代码。
+
+——rule_base是可解释性分析部分展示的原始规则，由本文源代码训练得到。
+
+
