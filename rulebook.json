@@ -1,0 +1,1072 @@
+{
+  "version": 2,
+  "rule_format": "wildcard_v2",
+  "coverage_specificity_alpha": 1.5,
+  "added_rule_mismatch_threshold": 0.35,
+  "added_rule_min_care_dims": 2,
+  "selected_variable_mismatch_threshold": 0.35,
+  "new_rule_min_dims": 2,
+  "new_rule_max_dims": 4,
+  "confidence_margin_threshold": 0.15,
+  "new_fuzzy_set_min_gap_ratio": 0.75,
+  "new_fuzzy_set_min_abs_gap": 0.08,
+  "variable_names": [
+    "goal_dist",
+    "goal_heading",
+    "front_clearance",
+    "left_social_pressure",
+    "right_social_pressure"
+  ],
+  "max_rules": 100,
+  "uncovered_threshold": 0.12,
+  "min_sigma": 0.06,
+  "max_sigma": 0.45,
+  "max_speed": 0.22,
+  "max_turn": 1.5,
+  "fuzzy_sets": {
+    "goal_dist": {
+      "centers": [
+        0.0330955795943737,
+        0.5504083037376404,
+        0.05057405307888985
+      ],
+      "sigmas": [
+        0.07378694415092468,
+        0.05999999865889549,
+        0.06453818082809448
+      ],
+      "labels": [
+        "near",
+        "far",
+        "goal_dist_mid_1"
+      ]
+    },
+    "goal_heading": {
+      "centers": [
+        -0.8322669863700867,
+        0.3010822534561157,
+        0.8509852290153503,
+        -0.625274658203125,
+        -0.3472943902015686,
+        0.32302218675613403,
+        0.3325316607952118,
+        0.1940242052078247,
+        -0.11998172104358673
+      ],
+      "sigmas": [
+        0.08324354141950607,
+        0.14069165289402008,
+        0.36198514699935913,
+        0.07014097273349762,
+        0.1285925954580307,
+        0.05999999865889549,
+        0.12156661599874496,
+        0.05999999865889549,
+        0.2012592852115631
+      ],
+      "labels": [
+        "right_far_3",
+        "left_near_2",
+        "left_far_5",
+        "right_near_2",
+        "right",
+        "left_near_3",
+        "left_near_4",
+        "left",
+        "center"
+      ]
+    },
+    "front_clearance": {
+      "centers": [
+        0.1676223874092102,
+        0.8848993182182312,
+        0.20755799114704132,
+        0.3199557363986969,
+        0.8620182871818542,
+        0.28122177720069885
+      ],
+      "sigmas": [
+        0.10060809552669525,
+        0.08056546002626419,
+        0.1267320215702057,
+        0.05999999865889549,
+        0.05999999865889549,
+        0.05999999865889549
+      ],
+      "labels": [
+        "blocked",
+        "clear",
+        "front_clearance_mid_1",
+        "front_clearance_mid_3",
+        "front_clearance_mid_4",
+        "front_clearance_mid_2"
+      ]
+    },
+    "left_social_pressure": {
+      "centers": [
+        0.9610921144485474
+      ],
+      "sigmas": [
+        0.07999970018863678
+      ],
+      "labels": [
+        "high"
+      ]
+    },
+    "right_social_pressure": {
+      "centers": [
+        0.04482532665133476,
+        1.0,
+        0.04245036840438843,
+        1.0,
+        0.013259358704090118
+      ],
+      "sigmas": [
+        0.11054794490337372,
+        0.05999999865889549,
+        0.09432053565979004,
+        0.061768099665641785,
+        0.05999999865889549
+      ],
+      "labels": [
+        "right_social_pressure_mid_2",
+        "right_social_pressure_mid_3",
+        "right_social_pressure_mid_1",
+        "high",
+        "low"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "antecedent": [
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.016346249729394913
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_0"
+    },
+    {
+      "antecedent": [
+        0,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.3009430170059204
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_1"
+    },
+    {
+      "antecedent": [
+        -1,
+        2,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.4996684789657593
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_2"
+    },
+    {
+      "antecedent": [
+        -1,
+        0,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.486333966255188
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_3"
+    },
+    {
+      "antecedent": [
+        0,
+        2,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.5
+      ],
+      "origin": "seed",
+      "name": "rule_4"
+    },
+    {
+      "antecedent": [
+        0,
+        0,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.08174209296703339,
+        -0.20309093594551086
+      ],
+      "origin": "seed",
+      "name": "rule_5"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        0,
+        -1,
+        1
+      ],
+      "action": [
+        0.0010803532786667347,
+        1.5
+      ],
+      "origin": "seed",
+      "name": "rule_6"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "action": [
+        0.0,
+        -1.49844229221344
+      ],
+      "origin": "seed",
+      "name": "rule_7"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        0,
+        0,
+        1
+      ],
+      "action": [
+        0.2169097512960434,
+        1.4115222692489624
+      ],
+      "origin": "seed",
+      "name": "rule_8"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.3164095878601074
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_9"
+    },
+    {
+      "antecedent": [
+        0,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.6556230783462524
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_10"
+    },
+    {
+      "antecedent": [
+        -1,
+        2,
+        -1,
+        0,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.1975144147872925
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_11"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        0,
+        -1,
+        -1
+      ],
+      "action": [
+        0.0,
+        -1.020411729812622
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_12"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        1,
+        0,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.7952433824539185
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_13"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        -1,
+        0,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.0456209182739258
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_14"
+    },
+    {
+      "antecedent": [
+        -1,
+        2,
+        0,
+        -1,
+        -1
+      ],
+      "action": [
+        0.0,
+        1.5
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_15"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        2,
+        -1,
+        0
+      ],
+      "action": [
+        0.0,
+        -1.4877623319625854
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_16"
+    },
+    {
+      "antecedent": [
+        -1,
+        1,
+        2,
+        -1,
+        -1
+      ],
+      "action": [
+        0.0,
+        1.5
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_17"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.6821985840797424
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_18"
+    },
+    {
+      "antecedent": [
+        -1,
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.19292281568050385
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_19"
+    },
+    {
+      "antecedent": [
+        0,
+        2,
+        -1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.5
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_20"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        2,
+        0,
+        -1
+      ],
+      "action": [
+        0.0,
+        -1.5
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_21"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        -1,
+        0,
+        -1
+      ],
+      "action": [
+        0.21408501267433167,
+        -0.270252525806427
+      ],
+      "origin": "expanded:left_social_pressure",
+      "name": "rule_22"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.0782790333032608
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_23"
+    },
+    {
+      "antecedent": [
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.4999115467071533
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_24"
+    },
+    {
+      "antecedent": [
+        -1,
+        4,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.09816132485866547,
+        -0.9468786120414734
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_25"
+    },
+    {
+      "antecedent": [
+        -1,
+        4,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.2379252314567566
+      ],
+      "origin": "expanded_merged:front_clearance",
+      "name": "rule_26"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        2,
+        -1,
+        -1
+      ],
+      "action": [
+        0.14042890071868896,
+        -1.181811809539795
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_27"
+    },
+    {
+      "antecedent": [
+        0,
+        4,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.0,
+        -1.5
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_28"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.4995602369308472
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_29"
+    },
+    {
+      "antecedent": [
+        -1,
+        3,
+        -1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.506288468837738
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_30"
+    },
+    {
+      "antecedent": [
+        -1,
+        4,
+        -1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.4562678039073944
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_31"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.1589903831481934
+      ],
+      "origin": "expanded:left_social_pressure",
+      "name": "rule_32"
+    },
+    {
+      "antecedent": [
+        -1,
+        2,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        1.095418930053711
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_33"
+    },
+    {
+      "antecedent": [
+        -1,
+        4,
+        1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.4045934677124023
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_34"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.1132100820541382
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_35"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.15054167807102203
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_36"
+    },
+    {
+      "antecedent": [
+        -1,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        1.488901972770691
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_37"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "action": [
+        0.1175459697842598,
+        -0.5165260434150696
+      ],
+      "origin": "expanded:left_social_pressure",
+      "name": "rule_38"
+    },
+    {
+      "antecedent": [
+        0,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.06840772926807404
+      ],
+      "origin": "expanded:goal_dist",
+      "name": "rule_39"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.34876447916030884
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_40"
+    },
+    {
+      "antecedent": [
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.03126607835292816
+      ],
+      "origin": "expanded_merged:front_clearance",
+      "name": "rule_41"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        3,
+        0,
+        -1
+      ],
+      "action": [
+        0.21888650953769684,
+        -0.6443853378295898
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_42"
+    },
+    {
+      "antecedent": [
+        0,
+        4,
+        -1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.13421519100666046,
+        -0.9599723219871521
+      ],
+      "origin": "merged_duplicate",
+      "name": "rule_43"
+    },
+    {
+      "antecedent": [
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.5007433295249939
+      ],
+      "origin": "expanded:goal_dist",
+      "name": "rule_44"
+    },
+    {
+      "antecedent": [
+        0,
+        5,
+        -1,
+        0,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.16926263272762299
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_45"
+    },
+    {
+      "antecedent": [
+        -1,
+        6,
+        2,
+        -1,
+        -1
+      ],
+      "action": [
+        0.0,
+        1.5
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_46"
+    },
+    {
+      "antecedent": [
+        2,
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "action": [
+        0.2199999988079071,
+        0.023266414180397987
+      ],
+      "origin": "expanded:goal_dist",
+      "name": "rule_47"
+    },
+    {
+      "antecedent": [
+        -1,
+        -1,
+        3,
+        -1,
+        2
+      ],
+      "action": [
+        0.0,
+        -1.2436126470565796
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_48"
+    },
+    {
+      "antecedent": [
+        2,
+        7,
+        1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        0.21443060040473938
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_49"
+    },
+    {
+      "antecedent": [
+        2,
+        4,
+        4,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -1.1912872791290283
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_50"
+    },
+    {
+      "antecedent": [
+        2,
+        -1,
+        5,
+        -1,
+        2
+      ],
+      "action": [
+        0.023106560111045837,
+        -0.37360745668411255
+      ],
+      "origin": "expanded:front_clearance",
+      "name": "rule_51"
+    },
+    {
+      "antecedent": [
+        2,
+        -1,
+        -1,
+        -1,
+        3
+      ],
+      "action": [
+        0.2199999988079071,
+        1.3436646461486816
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_52"
+    },
+    {
+      "antecedent": [
+        2,
+        8,
+        -1,
+        -1,
+        -1
+      ],
+      "action": [
+        0.21955342590808868,
+        -0.6909520030021667
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_53"
+    },
+    {
+      "antecedent": [
+        2,
+        -1,
+        4,
+        -1,
+        -1
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.18955999612808228
+      ],
+      "origin": "expanded:goal_dist",
+      "name": "rule_54"
+    },
+    {
+      "antecedent": [
+        2,
+        -1,
+        -1,
+        -1,
+        4
+      ],
+      "action": [
+        0.2199999988079071,
+        0.1395469456911087
+      ],
+      "origin": "expanded:right_social_pressure",
+      "name": "rule_55"
+    },
+    {
+      "antecedent": [
+        -1,
+        4,
+        -1,
+        -1,
+        2
+      ],
+      "action": [
+        0.2199999988079071,
+        -0.1743042916059494
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_56"
+    },
+    {
+      "antecedent": [
+        -1,
+        7,
+        3,
+        -1,
+        -1
+      ],
+      "action": [
+        0.1293913871049881,
+        0.05083208531141281
+      ],
+      "origin": "expanded:goal_heading",
+      "name": "rule_57"
+    }
+  ],
+  "rule_texts": [
+    "rule_0: IF goal_heading=left_near_2, front_clearance=clear THEN v=0.220, w=0.016",
+    "rule_1: IF goal_dist=near, goal_heading=left_near_2, front_clearance=clear THEN v=0.220, w=1.301",
+    "rule_2: IF goal_heading=left_far_5, front_clearance=clear THEN v=0.220, w=1.500",
+    "rule_3: IF goal_heading=right_far_3, front_clearance=clear THEN v=0.220, w=-1.486",
+    "rule_4: IF goal_dist=near, goal_heading=left_far_5, front_clearance=clear THEN v=0.220, w=1.500",
+    "rule_5: IF goal_dist=near, goal_heading=right_far_3, front_clearance=clear THEN v=0.082, w=-0.203",
+    "rule_6: IF front_clearance=blocked, right_social_pressure=right_social_pressure_mid_3 THEN v=0.001, w=1.500",
+    "rule_7: IF front_clearance=blocked, left_social_pressure=high THEN v=0.000, w=-1.498",
+    "rule_8: IF goal_dist=near, front_clearance=blocked, left_social_pressure=high, right_social_pressure=right_social_pressure_mid_3 THEN v=0.217, w=1.412",
+    "rule_9: IF front_clearance=clear, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.316",
+    "rule_10: IF goal_dist=near, goal_heading=left_near_2 THEN v=0.220, w=0.656",
+    "rule_11: IF goal_heading=left_far_5, left_social_pressure=high THEN v=0.220, w=-1.198",
+    "rule_12: IF goal_heading=right_near_2, front_clearance=blocked THEN v=0.000, w=-1.020",
+    "rule_13: IF front_clearance=clear, left_social_pressure=high THEN v=0.220, w=-0.795",
+    "rule_14: IF left_social_pressure=high, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.046",
+    "rule_15: IF goal_heading=left_far_5, front_clearance=blocked THEN v=0.000, w=1.500",
+    "rule_16: IF front_clearance=front_clearance_mid_1, right_social_pressure=right_social_pressure_mid_2 THEN v=0.000, w=-1.488",
+    "rule_17: IF goal_heading=left_near_2, front_clearance=front_clearance_mid_1 THEN v=0.000, w=1.500",
+    "rule_18: IF goal_heading=right_near_2, front_clearance=clear THEN v=0.220, w=-0.682",
+    "rule_19: IF goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.193",
+    "rule_20: IF goal_dist=near, goal_heading=left_far_5 THEN v=0.220, w=1.500",
+    "rule_21: IF front_clearance=front_clearance_mid_1, left_social_pressure=high THEN v=0.000, w=-1.500",
+    "rule_22: IF goal_heading=right_near_2, left_social_pressure=high THEN v=0.214, w=-0.270",
+    "rule_23: IF goal_dist=near, front_clearance=clear THEN v=0.220, w=0.078",
+    "rule_24: IF goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.500",
+    "rule_25: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_2 THEN v=0.098, w=-0.947",
+    "rule_26: IF goal_heading=right, front_clearance=clear THEN v=0.220, w=-0.238",
+    "rule_27: IF goal_heading=right_near_2, front_clearance=front_clearance_mid_1 THEN v=0.140, w=-1.182",
+    "rule_28: IF goal_dist=near, goal_heading=right, right_social_pressure=right_social_pressure_mid_2 THEN v=0.000, w=-1.500",
+    "rule_29: IF goal_heading=right_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.500",
+    "rule_30: IF goal_heading=right_near_2, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=-0.506",
+    "rule_31: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=0.456",
+    "rule_32: IF left_social_pressure=high, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.159",
+    "rule_33: IF goal_heading=left_far_5, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=1.095",
+    "rule_34: IF goal_heading=right, front_clearance=clear, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.405",
+    "rule_35: IF goal_dist=near, left_social_pressure=high THEN v=0.220, w=-1.113",
+    "rule_36: IF goal_dist=near, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.151",
+    "rule_37: IF goal_heading=right_far_3, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.489",
+    "rule_38: IF goal_dist=near, front_clearance=blocked, left_social_pressure=high THEN v=0.118, w=-0.517",
+    "rule_39: IF goal_dist=near, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=0.068",
+    "rule_40: IF front_clearance=clear, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.349",
+    "rule_41: IF goal_dist=far, front_clearance=clear THEN v=0.220, w=-0.031",
+    "rule_42: IF front_clearance=front_clearance_mid_3, left_social_pressure=high THEN v=0.219, w=-0.644",
+    "rule_43: IF goal_dist=near, goal_heading=right THEN v=0.134, w=-0.960",
+    "rule_44: IF goal_dist=far, goal_heading=left_near_2 THEN v=0.220, w=0.501",
+    "rule_45: IF goal_dist=near, goal_heading=left_near_3, left_social_pressure=high THEN v=0.220, w=0.169",
+    "rule_46: IF goal_heading=left_near_4, front_clearance=front_clearance_mid_1 THEN v=0.000, w=1.500",
+    "rule_47: IF goal_dist=goal_dist_mid_1, goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=0.023",
+    "rule_48: IF front_clearance=front_clearance_mid_3, right_social_pressure=right_social_pressure_mid_1 THEN v=0.000, w=-1.244",
+    "rule_49: IF goal_dist=goal_dist_mid_1, goal_heading=left, front_clearance=clear THEN v=0.220, w=0.214",
+    "rule_50: IF goal_dist=goal_dist_mid_1, goal_heading=right, front_clearance=front_clearance_mid_4 THEN v=0.220, w=-1.191",
+    "rule_51: IF goal_dist=goal_dist_mid_1, front_clearance=front_clearance_mid_2, right_social_pressure=right_social_pressure_mid_1 THEN v=0.023, w=-0.374",
+    "rule_52: IF goal_dist=goal_dist_mid_1, right_social_pressure=high THEN v=0.220, w=1.344",
+    "rule_53: IF goal_dist=goal_dist_mid_1, goal_heading=center THEN v=0.220, w=-0.691",
+    "rule_54: IF goal_dist=goal_dist_mid_1, front_clearance=front_clearance_mid_4 THEN v=0.220, w=-0.190",
+    "rule_55: IF goal_dist=goal_dist_mid_1, right_social_pressure=low THEN v=0.220, w=0.140",
+    "rule_56: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_1 THEN v=0.220, w=-0.174",
+    "rule_57: IF goal_heading=left, front_clearance=front_clearance_mid_3 THEN v=0.129, w=0.051"
+  ]
+}

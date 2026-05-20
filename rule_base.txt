@@ -1,0 +1,58 @@
+00: rule_0: IF goal_heading=left_near_2, front_clearance=clear THEN v=0.220, w=0.016
+01: rule_1: IF goal_dist=near, goal_heading=left_near_2, front_clearance=clear THEN v=0.220, w=1.301
+02: rule_2: IF goal_heading=left_far_5, front_clearance=clear THEN v=0.220, w=1.500
+03: rule_3: IF goal_heading=right_far_3, front_clearance=clear THEN v=0.220, w=-1.486
+04: rule_4: IF goal_dist=near, goal_heading=left_far_5, front_clearance=clear THEN v=0.220, w=1.500
+05: rule_5: IF goal_dist=near, goal_heading=right_far_3, front_clearance=clear THEN v=0.082, w=-0.203
+06: rule_6: IF front_clearance=blocked, right_social_pressure=right_social_pressure_mid_3 THEN v=0.001, w=1.500
+07: rule_7: IF front_clearance=blocked, left_social_pressure=high THEN v=0.000, w=-1.498
+08: rule_8: IF goal_dist=near, front_clearance=blocked, left_social_pressure=high, right_social_pressure=right_social_pressure_mid_3 THEN v=0.217, w=1.412
+09: rule_9: IF front_clearance=clear, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.316
+10: rule_10: IF goal_dist=near, goal_heading=left_near_2 THEN v=0.220, w=0.656
+11: rule_11: IF goal_heading=left_far_5, left_social_pressure=high THEN v=0.220, w=-1.198
+12: rule_12: IF goal_heading=right_near_2, front_clearance=blocked THEN v=0.000, w=-1.020
+13: rule_13: IF front_clearance=clear, left_social_pressure=high THEN v=0.220, w=-0.795
+14: rule_14: IF left_social_pressure=high, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.046
+15: rule_15: IF goal_heading=left_far_5, front_clearance=blocked THEN v=0.000, w=1.500
+16: rule_16: IF front_clearance=front_clearance_mid_1, right_social_pressure=right_social_pressure_mid_2 THEN v=0.000, w=-1.488
+17: rule_17: IF goal_heading=left_near_2, front_clearance=front_clearance_mid_1 THEN v=0.000, w=1.500
+18: rule_18: IF goal_heading=right_near_2, front_clearance=clear THEN v=0.220, w=-0.682
+19: rule_19: IF goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.193
+20: rule_20: IF goal_dist=near, goal_heading=left_far_5 THEN v=0.220, w=1.500
+21: rule_21: IF front_clearance=front_clearance_mid_1, left_social_pressure=high THEN v=0.000, w=-1.500
+22: rule_22: IF goal_heading=right_near_2, left_social_pressure=high THEN v=0.214, w=-0.270
+23: rule_23: IF goal_dist=near, front_clearance=clear THEN v=0.220, w=0.078
+24: rule_24: IF goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.500
+25: rule_25: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_2 THEN v=0.098, w=-0.947
+26: rule_26: IF goal_heading=right, front_clearance=clear THEN v=0.220, w=-0.238
+27: rule_27: IF goal_heading=right_near_2, front_clearance=front_clearance_mid_1 THEN v=0.140, w=-1.182
+28: rule_28: IF goal_dist=near, goal_heading=right, right_social_pressure=right_social_pressure_mid_2 THEN v=0.000, w=-1.500
+29: rule_29: IF goal_heading=right_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.500
+30: rule_30: IF goal_heading=right_near_2, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=-0.506
+31: rule_31: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=0.456
+32: rule_32: IF left_social_pressure=high, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.159
+33: rule_33: IF goal_heading=left_far_5, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=1.095
+34: rule_34: IF goal_heading=right, front_clearance=clear, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-1.405
+35: rule_35: IF goal_dist=near, left_social_pressure=high THEN v=0.220, w=-1.113
+36: rule_36: IF goal_dist=near, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.151
+37: rule_37: IF goal_heading=right_far_3, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=1.489
+38: rule_38: IF goal_dist=near, front_clearance=blocked, left_social_pressure=high THEN v=0.118, w=-0.517
+39: rule_39: IF goal_dist=near, right_social_pressure=right_social_pressure_mid_3 THEN v=0.220, w=0.068
+40: rule_40: IF front_clearance=clear, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=-0.349
+41: rule_41: IF goal_dist=far, front_clearance=clear THEN v=0.220, w=-0.031
+42: rule_42: IF front_clearance=front_clearance_mid_3, left_social_pressure=high THEN v=0.219, w=-0.644
+43: rule_43: IF goal_dist=near, goal_heading=right THEN v=0.134, w=-0.960
+44: rule_44: IF goal_dist=far, goal_heading=left_near_2 THEN v=0.220, w=0.501
+45: rule_45: IF goal_dist=near, goal_heading=left_near_3, left_social_pressure=high THEN v=0.220, w=0.169
+46: rule_46: IF goal_heading=left_near_4, front_clearance=front_clearance_mid_1 THEN v=0.000, w=1.500
+47: rule_47: IF goal_dist=goal_dist_mid_1, goal_heading=left_near_2, right_social_pressure=right_social_pressure_mid_2 THEN v=0.220, w=0.023
+48: rule_48: IF front_clearance=front_clearance_mid_3, right_social_pressure=right_social_pressure_mid_1 THEN v=0.000, w=-1.244
+49: rule_49: IF goal_dist=goal_dist_mid_1, goal_heading=left, front_clearance=clear THEN v=0.220, w=0.214
+50: rule_50: IF goal_dist=goal_dist_mid_1, goal_heading=right, front_clearance=front_clearance_mid_4 THEN v=0.220, w=-1.191
+51: rule_51: IF goal_dist=goal_dist_mid_1, front_clearance=front_clearance_mid_2, right_social_pressure=right_social_pressure_mid_1 THEN v=0.023, w=-0.374
+52: rule_52: IF goal_dist=goal_dist_mid_1, right_social_pressure=high THEN v=0.220, w=1.344
+53: rule_53: IF goal_dist=goal_dist_mid_1, goal_heading=center THEN v=0.220, w=-0.691
+54: rule_54: IF goal_dist=goal_dist_mid_1, front_clearance=front_clearance_mid_4 THEN v=0.220, w=-0.190
+55: rule_55: IF goal_dist=goal_dist_mid_1, right_social_pressure=low THEN v=0.220, w=0.140
+56: rule_56: IF goal_heading=right, right_social_pressure=right_social_pressure_mid_1 THEN v=0.220, w=-0.174
+57: rule_57: IF goal_heading=left, front_clearance=front_clearance_mid_3 THEN v=0.129, w=0.051
