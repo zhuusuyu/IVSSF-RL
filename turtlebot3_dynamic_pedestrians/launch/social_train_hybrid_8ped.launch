@@ -1,0 +1,149 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="-3.2"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+  <arg name="yaw" default="0.0"/>
+  <arg name="gui" default="true"/>
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find turtlebot3_dynamic_pedestrians)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find turtlebot3_dynamic_pedestrians)/worlds/social_train_hybrid_8ped.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param
+    name="robot_description"
+    command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_turtlebot3"
+    args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw) -param robot_description" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_1"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_1 -x -2.45 -y -3.05 -z 0.0 -Y 1.57" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_2"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_2 -x 1.95 -y 3.05 -z 0.0 -Y -1.57" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_3"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_3 -x -0.60 -y 2.80 -z 0.0 -Y 0.0" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_4"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_4 -x -0.60 -y -2.80 -z 0.0 -Y 0.0" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_5"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_5 -x -2.45 -y 3.05 -z 0.0 -Y -1.57" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_6"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_6 -x 1.95 -y -3.05 -z 0.0 -Y 1.57" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_7"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_7 -x 2.10 -y 1.20 -z 0.0 -Y 3.14" />
+
+  <node
+    pkg="gazebo_ros"
+    type="spawn_model"
+    name="spawn_ped_proxy_8"
+    args="-sdf -file $(find turtlebot3_dynamic_pedestrians)/models/pedestrian_lidar_proxy/model.sdf -model ped_proxy_8 -x 2.10 -y -1.20 -z 0.0 -Y 3.14" />
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_1_controller" output="screen">
+    <param name="model_name" value="ped_proxy_1"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_1_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_2_controller" output="screen">
+    <param name="model_name" value="ped_proxy_2"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_2_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_3_controller" output="screen">
+    <param name="model_name" value="ped_proxy_3"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_3_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_4_controller" output="screen">
+    <param name="model_name" value="ped_proxy_4"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_4_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_5_controller" output="screen">
+    <param name="model_name" value="ped_proxy_5"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_5_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_6_controller" output="screen">
+    <param name="model_name" value="ped_proxy_6"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_6_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_7_controller" output="screen">
+    <param name="model_name" value="ped_proxy_7"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_7_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+
+  <node pkg="turtlebot3_dynamic_pedestrians" type="scan_visible_pedestrians.py" name="ped_proxy_8_controller" output="screen">
+    <param name="model_name" value="ped_proxy_8"/>
+    <param name="follow_actor" value="true"/>
+    <param name="actor_name" value="ped_8_visual"/>
+    <param name="proxy_z" value="0.25"/>
+    <param name="startup_delay" value="2.0"/>
+    <param name="rate_hz" value="30.0"/>
+  </node>
+</launch>

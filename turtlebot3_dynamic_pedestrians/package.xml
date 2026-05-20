@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot3_dynamic_pedestrians</name>
+  <version>0.0.1</version>
+  <description>
+    Dynamic pedestrian world for TurtleBot3 in Gazebo.
+  </description>
+
+  <maintainer email="hnu@example.com">hnu</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>gazebo_ros</depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>turtlebot3_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
+</package>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="pedestrian_lidar_proxy">
+    <static>false</static>
+    <allow_auto_disable>false</allow_auto_disable>
+    <pose>0 0 0.25 0 0 0</pose>
+    <link name="link">
+      <kinematic>true</kinematic>
+      <gravity>false</gravity>
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <iyy>0.1</iyy>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.5 0.5 2.04</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 2.04</size>
+          </box>
+        </geometry>
+        <transparency>1.0</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>

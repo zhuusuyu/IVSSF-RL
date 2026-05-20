@@ -1,0 +1,412 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="social_train_hybrid">
+    <scene>
+      <ambient>0.46 0.46 0.48 1</ambient>
+      <background>0.93 0.96 1.0 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>0 -12 9 0 0.58 1.57</pose>
+      </camera>
+    </gui>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <physics type="ode">
+      <real_time_update_rate>0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.4</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.01</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <model name="north_wall">
+      <static>true</static>
+      <pose>0 4.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8.3 0.15 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8.3 0.15 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.56 0.57 0.60 1</ambient>
+            <diffuse>0.64 0.66 0.69 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="south_wall">
+      <static>true</static>
+      <pose>0 -4.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8.3 0.15 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8.3 0.15 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.56 0.57 0.60 1</ambient>
+            <diffuse>0.64 0.66 0.69 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="west_wall">
+      <static>true</static>
+      <pose>-4.0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.15 8.3 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.15 8.3 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.56 0.57 0.60 1</ambient>
+            <diffuse>0.64 0.66 0.69 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="east_wall">
+      <static>true</static>
+      <pose>4.0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.15 8.3 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.15 8.3 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.56 0.57 0.60 1</ambient>
+            <diffuse>0.64 0.66 0.69 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="center_block">
+      <static>true</static>
+      <pose>0.50 0.00 0.55 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.20 1.80 1.10</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.20 1.80 1.10</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.78 0.79 0.81 1</ambient>
+            <diffuse>0.84 0.85 0.87 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="upper_gate_block">
+      <static>true</static>
+      <pose>-1.35 2.25 0.45 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.75 0.55 0.90</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.75 0.55 0.90</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.72 0.74 0.79 1</ambient>
+            <diffuse>0.77 0.80 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="lower_gate_block">
+      <static>true</static>
+      <pose>-1.35 -2.25 0.45 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.75 0.55 0.90</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.75 0.55 0.90</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.72 0.74 0.79 1</ambient>
+            <diffuse>0.77 0.80 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <actor name="ped_1_visual">
+      <pose>-2.45 -3.05 1.02 0 0 1.57</pose>
+      <skin>
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>-2.45 -3.05 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>108.0</time>
+            <pose>-2.45 3.05 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>120.0</time>
+            <pose>-2.45 3.05 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>228.0</time>
+            <pose>-2.45 -3.05 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>240.0</time>
+            <pose>-2.45 -3.05 0 0 0 1.57</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="ped_2_visual">
+      <pose>1.95 3.05 1.02 0 0 -1.57</pose>
+      <skin>
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>1.95 3.05 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>105.0</time>
+            <pose>1.95 -3.05 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>117.0</time>
+            <pose>1.95 -3.05 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>222.0</time>
+            <pose>1.95 3.05 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>234.0</time>
+            <pose>1.95 3.05 0 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="ped_3_visual">
+      <pose>-0.60 2.80 1.02 0 0 0</pose>
+      <skin>
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>-0.60 2.80 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>72.0</time>
+            <pose>2.10 2.80 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>87.0</time>
+            <pose>2.10 2.80 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>120.0</time>
+            <pose>2.10 1.20 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>135.0</time>
+            <pose>2.10 1.20 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>207.0</time>
+            <pose>-0.60 1.20 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>222.0</time>
+            <pose>-0.60 1.20 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>255.0</time>
+            <pose>-0.60 2.80 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>270.0</time>
+            <pose>-0.60 2.80 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="ped_4_visual">
+      <pose>-0.60 -2.80 1.02 0 0 0</pose>
+      <skin>
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://pedestrian_actor_assets/walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>-0.60 -2.80 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>72.0</time>
+            <pose>2.10 -2.80 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>87.0</time>
+            <pose>2.10 -2.80 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>120.0</time>
+            <pose>2.10 -1.20 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>135.0</time>
+            <pose>2.10 -1.20 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>207.0</time>
+            <pose>-0.60 -1.20 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>222.0</time>
+            <pose>-0.60 -1.20 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>255.0</time>
+            <pose>-0.60 -2.80 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>270.0</time>
+            <pose>-0.60 -2.80 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+  </world>
+</sdf>

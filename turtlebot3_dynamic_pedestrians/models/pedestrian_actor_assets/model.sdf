@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="pedestrian_actor_assets">
+    <static>true</static>
+    <link name="placeholder_link">
+      <visual name="placeholder_visual">
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <transparency>1.0</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>
