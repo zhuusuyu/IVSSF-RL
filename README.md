@@ -73,7 +73,7 @@ It is used for both training and in-domain evaluation.
 Launch command:
 
 ```bash
-roslaunch turtlebot3_dynamic_pedestrians social_train_hybrid_8ped.launch
+roslaunch turtlebot3_dynamic_pedestrians social_teacher_wall_8ped_opposite.launch
 ```
 
 ### 3. Generalization Scenario
@@ -85,7 +85,7 @@ It is used only for zero-shot evaluation of the agent trained in the 8-pedestria
 Launch command:
 
 ```bash
-roslaunch turtlebot3_dynamic_pedestrians social_teacher_wall_8ped_opposite.launch
+roslaunch turtlebot3_dynamic_pedestrians social_train_hybrid_8ped.launch
 ```
 
 ## Environment Usage
@@ -101,13 +101,13 @@ roslaunch turtlebot3_dynamic_pedestrians social_teacher_cross_dual_lane.launch
 For the 8-pedestrian scenario:
 
 ```bash
-roslaunch turtlebot3_dynamic_pedestrians social_train_hybrid_8ped.launch
+roslaunch turtlebot3_dynamic_pedestrians social_teacher_wall_8ped_opposite.launch
 ```
 
 For the Generalization scenario:
 
 ```bash
-roslaunch turtlebot3_dynamic_pedestrians social_teacher_wall_8ped_opposite.launch
+roslaunch turtlebot3_dynamic_pedestrians social_train_hybrid_8ped.launch
 ```
 
 After the simulation environment is launched, the training or evaluation scripts in `IVSSF_RL` can be executed.
